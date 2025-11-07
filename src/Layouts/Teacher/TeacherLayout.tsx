@@ -1,10 +1,11 @@
 import {
   LayoutDashboard,
   Users,
-  Shield,
   Settings,
   ChevronUp,
   SunMoon,
+  Newspaper,
+  Shield,
 } from "lucide-react";
 
 import {
@@ -38,25 +39,30 @@ const items = [
     icon: LayoutDashboard,
   },
   {
-    title: "Assign Exams",
-    url: "/profile",
+    title: "Exams",
+    url: "/teacher/exams",
+    icon: Newspaper,
+  },
+  {
+    title: "Students",
+    url: "/students",
     icon: Users,
   },
   {
     title: "Proctoring",
-    url: "/logout",
+    url: "/proctoring",
     icon: Shield,
   },
   {
     title: "Settings",
-    url: "/logout",
+    url: "/settings",
     icon: Settings,
   },
 ];
 
 export function TeacherSidebar() {
   const location = useLocation();
-  const {setTheme} = useTheme();
+  const { setTheme } = useTheme();
 
   const pathname = location.pathname;
 
@@ -71,7 +77,10 @@ export function TeacherSidebar() {
             <SidebarGroupContent>
               <SidebarMenu className="mt-5">
                 {items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuItem
+                    key={item.title}
+                    className="flex flex-col justify-between items-center"
+                  >
                     <SidebarMenuButton asChild isActive={pathname === item.url}>
                       <NavLink to={item.url}>
                         <item.icon size={"15px"} />
@@ -103,7 +112,7 @@ export function TeacherSidebar() {
                   <span>Dark</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setTheme("light")}>
-                  <span >Light</span>
+                  <span>Light</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -119,9 +128,8 @@ export function TeacherLayout() {
     <SidebarProvider>
       <TeacherSidebar />
       <main>
-        <SidebarTrigger>
-          <Outlet />
-        </SidebarTrigger>
+        <SidebarTrigger />
+        <Outlet />
       </main>
     </SidebarProvider>
   );
