@@ -4,7 +4,7 @@ import Exam from "./pages/Teacher/Exams"
 import Register from "./pages/global/Register"
 import Login from "./pages/global/Login"
 import { LandingPage } from "./pages/global/LandingPage"
-import { useNavigate } from "react-router-dom"
+
 
 function App() {
 
