@@ -6,6 +6,7 @@ import {
   SunMoon,
   Newspaper,
   Shield,
+  ShieldPlus,
 } from "lucide-react";
 
 import {
@@ -45,17 +46,17 @@ const items = [
   },
   {
     title: "Students",
-    url: "/students",
+    url: "/teacher/students",
     icon: Users,
   },
   {
     title: "Proctoring",
-    url: "/proctoring",
+    url: "/teacher/proctoring",
     icon: Shield,
   },
   {
     title: "Settings",
-    url: "/settings",
+    url: "/teacher/settings",
     icon: Settings,
   },
 ];
@@ -72,7 +73,7 @@ export function TeacherSidebar() {
         <SidebarHeader>
           <SidebarGroup>
             <SidebarGroupLabel className="text-2xl mt-2">
-              <span>Proctor-IQ</span>
+              <span className="flex gap-1"><ShieldPlus className="size-6 text-primary-base mt-1" /> Proctor-IQ</span>
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu className="mt-5">
@@ -127,7 +128,7 @@ export function TeacherLayout() {
   return (
     <SidebarProvider>
       <TeacherSidebar />
-      <main>
+      <main className="w-full">
         <SidebarTrigger />
         <Outlet />
       </main>
