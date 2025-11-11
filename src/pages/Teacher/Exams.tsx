@@ -121,8 +121,49 @@ const ExamPage: React.FC = () => {
           questionType: "True/False",
           marks: 3,
         },
+        {
+          id: 3,
+          exam: selectedExam,
+          text: "Which of the following is used to declare a constant in JavaScript?",
+          questionType: "Multiple Choice",
+          marks: 5,
+        },
+        {
+          id: 4,
+          exam: selectedExam,
+          text: "JavaScript is a statically typed language.",
+          questionType: "True/False",
+          marks: 3,
+        },
+        {
+          id: 5,
+          exam: selectedExam,
+          text: "Which of the following is used to declare a constant in JavaScript?",
+          questionType: "Multiple Choice",
+          marks: 5,
+        },
+        {
+          id: 6,
+          exam: selectedExam,
+          text: "JavaScript is a statically typed language.",
+          questionType: "True/False",
+          marks: 3,
+        },
+        {
+          id: 7,
+          exam: selectedExam,
+          text: "Which of the following is used to declare a constant in JavaScript?",
+          questionType: "Multiple Choice",
+          marks: 5,
+        },
+        {
+          id: 8,
+          exam: selectedExam,
+          text: "JavaScript is a statically typed language.",
+          questionType: "True/False",
+          marks: 3,
+        },
       ];
-
 
       setExamQuestions(questions);
     }
@@ -130,12 +171,12 @@ const ExamPage: React.FC = () => {
 
   return (
     <div className="flex flex-col md:flex md:flex-row p-4 md:justify-center gap-8 w-full md:items-start">
-      <div className="flex flex-col w-full ">
+      <div className="flex flex-col w-full md:sticky md:top-10 ">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-2xl font-bold">Exams</h1>
           <AddExamDialog />
         </div>
-        <div className="ms-[-10px] mx-4">
+        <div className="ms-[-10px] mx-4 ">
           <ExamsCards
             exams={exams}
             selectedExam={(exam: Exam) => setSelectedExam(exam)}
